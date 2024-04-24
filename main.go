@@ -10,10 +10,12 @@ import (
 	"github.com/leslie-fei/gnettls"
 	"github.com/leslie-fei/gnettls/tls"
 	"github.com/panjf2000/gnet/v2"
+	"github.com/panjf2000/gnet/v2/pkg/logging"
 	"github.com/panjf2000/gnet/v2/pkg/pool/goroutine"
 )
 
 func main() {
+	logging.Infof("version: 0.0.1")
 	runHTTPServer()
 }
 

@@ -3,7 +3,7 @@ module gnet-example
 go 1.21
 
 require (
-	github.com/leslie-fei/gnettls v0.0.0-20240424043044-bad04fe101b7
+	github.com/leslie-fei/gnettls v0.0.0-20240424081129-83fe213100a4
 	github.com/panjf2000/gnet/v2 v2.5.0
 )
 

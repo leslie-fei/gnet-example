@@ -6,8 +6,8 @@ github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSs
 github.com/kr/pretty v0.1.0/go.mod h1:dAy3ld7l9f0ibDNOQOHHMYYIIbhfbHSm3C4ZsoJORNo=
 github.com/kr/pty v1.1.1/go.mod h1:pFQYn66WHrOpPYNljwOMqo10TkYh1fy3cYio2l3bCsQ=
 github.com/kr/text v0.1.0/go.mod h1:4Jbv+DJW3UT/LiOwJeYQe1efqtUx/iVham/4vfdArNI=
-github.com/leslie-fei/gnettls v0.0.0-20240424043044-bad04fe101b7 h1:0bXAcYc6ZxwwW7cSBFSJA4CIu58sUlIjTcMJEsFPOro=
-github.com/leslie-fei/gnettls v0.0.0-20240424043044-bad04fe101b7/go.mod h1:x/5kRnaoA0IqGkgMXTlDyUuX4/YJ+J0L7EMhaelMus4=
+github.com/leslie-fei/gnettls v0.0.0-20240424081129-83fe213100a4 h1:0SLx+96wu2GBioxYT+ruSt68RpmamzIdyDyj0A/6Hfg=
+github.com/leslie-fei/gnettls v0.0.0-20240424081129-83fe213100a4/go.mod h1:ZfpYhm3RizYChGx2VA8Md+Y9l+edK/3DYgKashxbLJc=
 github.com/panjf2000/ants/v2 v2.9.0 h1:SztCLkVxBRigbg+vt0S5QvF5vxAbxbKt09/YfAJ0tEo=
 github.com/panjf2000/ants/v2 v2.9.0/go.mod h1:7ZxyxsqE4vvW0M7LSD8aI3cKwgFhBHbxnlN8mDqHa1I=
 github.com/panjf2000/gnet/v2 v2.5.0 h1:nJOJ+SK+MeFN4+6zNgxPRU88BbH7SAMf9wu7nw6mGz4=
