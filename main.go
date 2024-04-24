@@ -7,9 +7,10 @@ import (
 	"log"
 	"time"
 
+	"github.com/leslie-fei/gnettls"
+	"github.com/leslie-fei/gnettls/tls"
 	"github.com/panjf2000/gnet/v2"
 	"github.com/panjf2000/gnet/v2/pkg/pool/goroutine"
-	"github.com/panjf2000/gnet/v2/pkg/tls"
 )
 
 func main() {
@@ -37,11 +38,10 @@ func runHTTPServer() {
 	options := []gnet.Option{
 		gnet.WithMulticore(multicore),
 		gnet.WithTCPKeepAlive(time.Minute * 5),
-		gnet.WithTLSConfig(tlsConfig),
 		gnet.WithReusePort(true),
 	}
 
-	log.Fatal(gnet.Run(hs, hs.addr, options...))
+	log.Fatal(gnettls.Run(hs, hs.addr, tlsConfig, options...))
 }
 
 type httpsServer struct {
