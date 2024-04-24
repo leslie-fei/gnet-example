@@ -1,6 +1,6 @@
 module gnet-example
 
-go 1.22
+go 1.21
 
 require (
 	github.com/leslie-fei/gnettls v0.0.0-20240424043044-bad04fe101b7
