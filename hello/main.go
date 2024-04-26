@@ -5,6 +5,8 @@ import (
 	"flag"
 	"fmt"
 	"log"
+	"net/http"
+	_ "net/http/pprof"
 	"time"
 
 	"github.com/leslie-fei/gnettls"
@@ -16,6 +18,12 @@ import (
 
 func main() {
 	logging.Infof("version: 0.0.1")
+	go func() {
+		err := http.ListenAndServe("0.0.0.0:6060", nil)
+		if nil != err {
+			log.Fatal(err)
+		}
+	}()
 	runHTTPServer()
 }
 
@@ -55,11 +63,6 @@ type httpsServer struct {
 	pool      *goroutine.Pool
 }
 
-/*func (hs *httpsServer) OnOpen(c gnet.Conn) ([]byte, gnet.Action) {
-	// logging.Infof("OnOpen addr: %s", c.RemoteAddr().String())
-	return []byte("HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: 12\r\n\r\nHello world!"), gnet.None
-}*/
-
 func (hs *httpsServer) OnTraffic(c gnet.Conn) (action gnet.Action) {
 	// read all get http request
 	// TODO decode http codec
@@ -76,11 +79,6 @@ func (hs *httpsServer) OnTraffic(c gnet.Conn) (action gnet.Action) {
 func (hs *httpsServer) isHTTPRequestComplete(c gnet.Conn) bool {
 	buf, _ := c.Peek(c.InboundBuffered())
 	return bytes.Contains(buf, []byte("\r\n\r\n"))
-}
-
-func (hs *httpsServer) OnClosed(c gnet.Conn, err error) (action gnet.Action) {
-	log.Printf("Closed connection on %s, error: %v", c.RemoteAddr().String(), err)
-	return
 }
 
 func mustLoadCertificate() tls.Certificate {
